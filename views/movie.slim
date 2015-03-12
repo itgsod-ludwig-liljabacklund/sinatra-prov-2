@@ -1,3 +1,7 @@
-- for cinema in @cinemas_showing_movie.uniq
-    a href='#{@movie_id}/cinema/#{cinema.id}' #{cinema.name}
-    br
+h1 Cinemas that show this movie
+- if @cinemas_showing_movie.empty?
+    p None
+- else
+  - for cinema in @cinemas_showing_movie.uniq
+      a href='#{@movie_id}/cinema/#{cinema.id}' #{cinema.name}
+      br
