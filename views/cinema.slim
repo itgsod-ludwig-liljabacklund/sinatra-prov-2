@@ -1,0 +1,4 @@
+h1 #{@cinema.name}
+- for movie in @movies_in_cinema
+    a href='/movie/#{movie.id}/cinema/#{@cinema.id}' #{movie.name}
+    br
