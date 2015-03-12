@@ -1,0 +1,9 @@
+h1 Booking
+p Movie: #{@movie.name}
+p Cinema: #{@cinema.name}, Room #{@showing.room.id}.
+p Time: #{@showing.start_time.strftime("%b %e, %l:%M %p")}
+p Seats Remaining: #{@room.number_of_seats - (Booking.all(showing: @showing)).length}
+p ----------------------------------
+form action='/book_showing/#{@showing.id}' method='post'
+  input type='text' id='name' name='name' placeholder='Name'
+  input type="submit" value="Book"
