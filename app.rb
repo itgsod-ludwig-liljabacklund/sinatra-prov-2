@@ -30,7 +30,6 @@ class App < Sinatra::Base
     @cinema = Cinema.first(id: cinema_id)
     showings_in_cinema = Showing.all(cinema_id: cinema_id)
     @movies_in_cinema = showings_in_cinema.movies
-    p @movies_in_cinema
     slim :cinema
   end
 
