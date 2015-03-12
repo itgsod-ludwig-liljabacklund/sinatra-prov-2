@@ -1,4 +1,6 @@
 h1 Showings for #{@movie.name} in #{@cinema.name}
 - for showing in @showings
-    a href='/book_showing/#{showing.id}' #{showing.start_time.strftime("%b %e, %l:%M %p")}
+    p #{showing.start_time.strftime("%b %e, %l:%M %p")}
+    form action='/book_showing/#{showing.id}'
+      button Book
     br
