@@ -7,4 +7,5 @@ class Showing
   belongs_to :movie
   belongs_to :cinema
   belongs_to :room
+  has n, :bookings
 end
