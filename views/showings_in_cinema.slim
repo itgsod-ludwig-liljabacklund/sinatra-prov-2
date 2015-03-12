@@ -1,3 +1,4 @@
 h1 Showings for #{@movie.name} in #{@cinema.name}
 - for showing in @showings
-    p #{showing.start_time.strftime("%b %e, %l:%M %p")}
+    a href='/book_showing/#{showing.id}' #{showing.start_time.strftime("%b %e, %l:%M %p")}
+    br
