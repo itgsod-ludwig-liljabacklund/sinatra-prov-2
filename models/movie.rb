@@ -5,5 +5,5 @@ class Movie
   property :name, String, :required => true
   property :runtime, Integer, :required => true
 
-  has n, :showing
+  has n, :showings
 end

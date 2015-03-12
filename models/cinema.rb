@@ -4,6 +4,10 @@ class Cinema
   property :id, Serial
   property :name, String, :required => true
 
-  has n, :showing
-  has n, :room
+  has n, :showings
+  has n, :rooms
+
+  # def rooms
+  #   Room.all(cinema_id: self.id)
+  # end
 end

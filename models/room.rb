@@ -5,6 +5,6 @@ class Room
   property :name, String, :required => true
   property :number_of_seats, Integer, :required => true
 
-  has n, :showing
+  has n, :showings
   belongs_to :cinema
 end
