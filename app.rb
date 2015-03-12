@@ -44,7 +44,7 @@ class App < Sinatra::Base
 
   post '/book_showing/:id' do |showing_id|
     Booking.create(name: params['name'], showing_id: showing_id)
-    redirect '/'
+    redirect back
   end
 
 end
