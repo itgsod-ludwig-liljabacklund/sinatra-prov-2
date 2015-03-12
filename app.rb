@@ -8,6 +8,7 @@ class App < Sinatra::Base
   end
 
   get '/movie/:id' do |movie_id|
+    @movie = Movie.first(id: movie_id)
     @movie_id = movie_id
     @showings = Showing.all(movie_id: movie_id)
     @cinemas_showing_movie = []
@@ -43,7 +44,15 @@ class App < Sinatra::Base
 
   post '/book_showing/:id' do |showing_id|
     Booking.create(name: params['name'], showing_id: showing_id)
-    redirect back
+    redirect "/success/#{showing_id}/#{params['name']}"
   end
+
+  get '/success/:showing_id/:name' do |showing_id, name|
+    @showing = Showing.get(showing_id)
+    @name = name
+    @movie_name = (Movie.first(id: @showing.movie_id)).name
+    slim :success
+  end
+
 
 end
