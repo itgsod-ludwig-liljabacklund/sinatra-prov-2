@@ -1,0 +1,8 @@
+h1 Movies
+- for movie in @movies
+    a href='movie/#{movie.id}' #{movie.name}
+    br
+h1 Cinemas
+- for cinema in @cinemas
+    a href='cinema/#{cinema.id}' #{cinema.name}
+    br 
