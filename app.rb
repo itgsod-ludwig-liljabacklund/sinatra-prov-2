@@ -26,4 +26,12 @@ class App < Sinatra::Base
     slim :showings_in_cinema
   end
 
+  get '/cinema/:id' do |cinema_id|
+    @cinema = Cinema.first(id: cinema_id)
+    showings_in_cinema = Showing.all(cinema_id: cinema_id)
+    @movies_in_cinema = showings_in_cinema.movies
+    p @movies_in_cinema
+    slim :cinema
+  end
+
 end
